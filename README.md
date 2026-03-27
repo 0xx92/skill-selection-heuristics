@@ -1,67 +1,201 @@
 # skill-selection-heuristics
 
-A practical AgentSkill for choosing the **right skill, direct tool, or local action** inside OpenClaw-style workflows.
+> Stop choosing skills by vibes.
 
-This skill is for the annoying but important question:
+A practical AgentSkill for OpenClaw-style agents that need to decide between:
 
-> Should I load a skill at all, and if so, which one?
+- using a skill
+- using a direct tool
+- making a small local edit
+- rejecting a vague or dangerous skill entirely
 
-Instead of treating skill choice like vibes, this skill treats it like **routing**.
+This project turns skill choice into **routing with gates**, not hand-wavy intuition.
 
-## What it does
+---
 
-It helps an agent:
+## Why this exists
 
-- decide when a skill is actually warranted
-- reject vague, over-broad, or high-blast-radius skills
-- choose between overlapping skills
-- apply hard gates like verification, red flags, fallback paths, and trust checks
-- avoid wasting context on the wrong skill
+As skill ecosystems grow, agents start hitting a very real problem:
+
+- too many overlapping skills
+- vague trigger descriptions
+- "do everything" meta-skills
+- context wasted on the wrong skill
+- advice-heavy skills with no stop conditions
+- fake confidence from skills that *sound* smart but don't enforce anything
+
+The result is predictable:
+
+- wrong skill chosen
+- too much context loaded
+- higher token cost
+- less reliable execution
+- more hallucinated completion
+
+This skill exists to reduce that.
+
+---
+
+## What the skill does
+
+`skill-selection-heuristics` helps an agent:
+
+1. decide whether a skill is even needed
+2. choose between multiple candidate skills
+3. reject over-broad or unsafe skills
+4. prefer direct execution when a skill would be overhead
+5. evaluate skill quality using hard criteria
+6. report its choice in a compact, structured way
+
+---
+
+## Core idea
+
+A strong skill should have:
+
+- **clear trigger conditions**
+- **clear non-trigger conditions**
+- **hard gates**
+- **red flags**
+- **fallback behavior**
+- **constrained output shape**
+
+If it doesn't, it's probably documentation — not a strong skill.
+
+---
+
+## Included files
+
+- `SKILL.md` — the actual AgentSkill definition
+- `LICENSE` — MIT
+- `.gitignore`
+
+---
 
 ## Best use cases
 
 Use this when:
 
-- multiple skills might match the same task
-- a task is slowing down because the wrong skill keeps triggering
-- reviewing a skill for quality or usefulness
-- deciding between direct tool use vs loading a skill
-- creating or improving a skill and wanting a stronger trigger/boundary model
+- multiple skills seem to match one task
+- a task keeps slowing down because the wrong skill triggers
+- reviewing a skill before adopting it
+- creating a new skill and wanting stronger boundaries
+- deciding between *load a skill* vs *just do the work directly*
 
-## Core design idea
+Do **not** use this for:
 
-A strong skill should have:
+- trivial one-step tasks
+- direct reads/writes/edits with obvious tooling
+- situations where a known, specific skill clearly dominates already
 
-- clear trigger conditions
-- clear non-trigger conditions
-- hard gates
-- red flags
-- fallback behavior
-- constrained output shape
+---
 
-If it does not, it is probably documentation, not a strong skill.
+## The design philosophy
 
-## Included file
+This project strongly prefers:
 
-- `SKILL.md` — the actual skill definition
+- narrow scope over broad promises
+- gates over suggestions
+- routing over vibes
+- evidence over completion theater
+- small context over context bloat
 
-## Philosophy
+A skill should not just make an agent *sound* competent.
+It should make the agent **less likely to do dumb things**.
 
-Good skill selection improves:
+---
 
-- execution quality
-- context discipline
-- verification quality
-- token efficiency
-- safety around external actions and auth
+## Example questions this skill helps answer
 
-Bad skill selection causes:
+- "Should I load a planning skill for this, or just work directly?"
+- "Two skills match — which one wins?"
+- "Is this skill useful, or just long and vague?"
+- "Should I trust this newly discovered skill enough to use it?"
+- "Is the skill reducing complexity, or adding complexity?"
 
-- over-triggering
-- context pollution
-- fake completion
-- unnecessary complexity
-- trust mistakes
+---
+
+## What this skill optimizes for
+
+### 1. Lower token waste
+Avoid loading large, vague skills when direct execution is cheaper.
+
+### 2. Better routing
+Choose the most specific skill instead of the loudest one.
+
+### 3. Better safety
+Reject skills that imply hidden installs, broad authority, or external writes without strong boundaries.
+
+### 4. Better completion quality
+Prefer skills that include verification gates and failure fallbacks.
+
+---
+
+## Quality heuristics used by the skill
+
+The skill prefers candidates that are:
+
+- narrow in scope
+- explicit about when to use them
+- explicit about when **not** to use them
+- backed by gates, red flags, and fallback rules
+- cheaper than improvising from scratch
+- inspectable and proportionate to the task
+
+The skill rejects candidates that are:
+
+- overly broad
+- mostly prose with no routing value
+- missing verification logic
+- missing stop conditions
+- high-blast-radius without justification
+- likely to pollute context more than they help
+
+---
+
+## Example output shape
+
+When used well, the skill should drive output like:
+
+- **Candidate skills:** ...
+- **Chosen path:** ...
+- **Why this path wins:** ...
+- **Rejected options:** ...
+- **Key gate:** ...
+- **Next step:** ...
+
+---
+
+## Who this is for
+
+This is most useful for:
+
+- OpenClaw users building a serious local skill library
+- agents that juggle multiple overlapping workflows
+- people tired of vague automation frameworks
+- anyone who wants more reliable skill routing with less token waste
+
+---
+
+## Roadmap ideas
+
+Potential future additions:
+
+- a trust-scoring companion skill
+- a skill-architecture-review companion skill
+- a small reference catalog of good vs bad trigger patterns
+- a machine-readable scoring schema for skill quality
+
+---
+
+## Repository goal
+
+This repo is intentionally small.
+
+The goal is not to build a giant framework.
+The goal is to publish one useful, inspectable skill that solves one annoying problem well.
+
+---
 
 ## License
 
