@@ -38,6 +38,16 @@ This skill exists to reduce that.
 
 ---
 
+## Before / After
+
+![before-after](assets/before-after.svg)
+
+Without this kind of routing skill, agents tend to over-trigger broad skills, load too much context, and call work complete too early.
+
+With it, routing becomes narrower, safer, and cheaper.
+
+---
+
 ## What the skill does
 
 `skill-selection-heuristics` helps an agent:
@@ -71,7 +81,9 @@ If it doesn't, it's probably documentation — not a strong skill.
 - `SKILL.md` — the actual AgentSkill definition
 - `references/examples.md` — concrete routing examples
 - `references/scorecard.md` — quick scoring framework for skill quality
+- `references/bad-skill-checklist.md` — fast rejection checklist
 - `assets/banner.svg` — repository banner
+- `assets/before-after.svg` — visual explainer
 - `LICENSE` — MIT
 - `.gitignore`
 
@@ -159,6 +171,7 @@ The skill rejects candidates that are:
 - likely to pollute context more than they help
 
 For a quick review rubric, see [references/scorecard.md](references/scorecard.md).
+For a fast reject pass, see [references/bad-skill-checklist.md](references/bad-skill-checklist.md).
 
 ---
 
