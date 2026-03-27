@@ -1,5 +1,7 @@
 # skill-selection-heuristics
 
+![skill-selection-heuristics banner](assets/banner.svg)
+
 > Stop choosing skills by vibes.
 
 A practical AgentSkill for OpenClaw-style agents that need to decide between:
@@ -67,6 +69,9 @@ If it doesn't, it's probably documentation — not a strong skill.
 ## Included files
 
 - `SKILL.md` — the actual AgentSkill definition
+- `references/examples.md` — concrete routing examples
+- `references/scorecard.md` — quick scoring framework for skill quality
+- `assets/banner.svg` — repository banner
 - `LICENSE` — MIT
 - `.gitignore`
 
@@ -113,6 +118,8 @@ It should make the agent **less likely to do dumb things**.
 - "Should I trust this newly discovered skill enough to use it?"
 - "Is the skill reducing complexity, or adding complexity?"
 
+For concrete walk-throughs, see [references/examples.md](references/examples.md).
+
 ---
 
 ## What this skill optimizes for
@@ -151,6 +158,8 @@ The skill rejects candidates that are:
 - high-blast-radius without justification
 - likely to pollute context more than they help
 
+For a quick review rubric, see [references/scorecard.md](references/scorecard.md).
+
 ---
 
 ## Example output shape
@@ -174,6 +183,23 @@ This is most useful for:
 - agents that juggle multiple overlapping workflows
 - people tired of vague automation frameworks
 - anyone who wants more reliable skill routing with less token waste
+
+---
+
+## A tiny quality scorecard
+
+You can quickly score a skill on:
+
+- trigger clarity
+- non-trigger clarity
+- gate strength
+- red flags
+- fallback path
+- output shape
+- cost efficiency
+- trust surface
+
+Full version: [references/scorecard.md](references/scorecard.md)
 
 ---
 
