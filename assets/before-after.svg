@@ -1,19 +1,19 @@
 <svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
   <rect width="1280" height="720" fill="#0b1020"/>
   <text x="640" y="90" text-anchor="middle" fill="#f8fafc" font-size="54" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Before vs After skill-selection-heuristics</text>
-  <rect x="80" y="150" width="500" height="470" rx="24" fill="#1f172a" stroke="#7c3aed" stroke-width="2"/>
+  <rect x="80" y="150" width="500" height="470" rx="24" fill="#2a1630" stroke="#d946ef" stroke-width="2"/>
   <text x="330" y="210" text-anchor="middle" fill="#fda4af" font-size="42" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Before</text>
   <text x="130" y="290" fill="#fecdd3" font-size="28" font-family="Segoe UI, Arial, sans-serif">• Wrong skill wins because it sounds smart</text>
   <text x="130" y="350" fill="#fecdd3" font-size="28" font-family="Segoe UI, Arial, sans-serif">• Too much context gets loaded</text>
   <text x="130" y="410" fill="#fecdd3" font-size="28" font-family="Segoe UI, Arial, sans-serif">• No hard gate before action</text>
   <text x="130" y="470" fill="#fecdd3" font-size="28" font-family="Segoe UI, Arial, sans-serif">• Completion is based on vibes</text>
   <text x="130" y="530" fill="#fecdd3" font-size="28" font-family="Segoe UI, Arial, sans-serif">• Dangerous broad skills slip through</text>
-  <rect x="700" y="150" width="500" height="470" rx="24" fill="#0f1f19" stroke="#22c55e" stroke-width="2"/>
+  <rect x="700" y="150" width="500" height="470" rx="24" fill="#062b21" stroke="#10b981" stroke-width="2"/>
   <text x="950" y="210" text-anchor="middle" fill="#86efac" font-size="42" font-family="Segoe UI, Arial, sans-serif" font-weight="700">After</text>
   <text x="750" y="290" fill="#bbf7d0" font-size="28" font-family="Segoe UI, Arial, sans-serif">• Most specific path wins</text>
   <text x="750" y="350" fill="#bbf7d0" font-size="28" font-family="Segoe UI, Arial, sans-serif">• Context stays small and deliberate</text>
   <text x="750" y="410" fill="#bbf7d0" font-size="28" font-family="Segoe UI, Arial, sans-serif">• Gates and red flags are checked first</text>
   <text x="750" y="470" fill="#bbf7d0" font-size="28" font-family="Segoe UI, Arial, sans-serif">• Fallback exists when blocked</text>
-  <text x="750" y="530" fill="#bbf7d0" font-size="28" font-family="Segoe UI, Arial, sans-serif">• Done means evidence, not confidence</text>
+  <text x="750" y="530" fill="#bbf7d0" font-size="28" font-family="Segoe UI, Arial, sans-serif">• Done means evidence, not vibes</text>
   <text x="640" y="670" text-anchor="middle" fill="#94a3b8" font-size="24" font-family="Segoe UI, Arial, sans-serif">Routing with gates, not vibes.</text>
 </svg>

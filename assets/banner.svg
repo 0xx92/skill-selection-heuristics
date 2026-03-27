@@ -21,6 +21,7 @@
   <text x="648" y="360" fill="#f59e0b" font-size="28" font-family="Consolas, monospace">Red flags</text>
   <rect x="870" y="320" width="250" height="62" rx="14" fill="#111827" stroke="#374151"/>
   <text x="905" y="360" fill="#a78bfa" font-size="28" font-family="Consolas, monospace">Fallback</text>
-  <text x="120" y="470" fill="#cbd5e1" font-size="24" font-family="Segoe UI, Arial, sans-serif">A practical OpenClaw-style AgentSkill for routing decisions, reducing token waste, and rejecting vague or dangerous skills.</text>
-  <rect x="120" y="510" width="290" height="10" rx="5" fill="url(#accent)"/>
+  <text x="120" y="460" fill="#cbd5e1" font-size="22" font-family="Segoe UI, Arial, sans-serif">A practical OpenClaw-style AgentSkill for routing decisions,</text>
+  <text x="120" y="494" fill="#cbd5e1" font-size="22" font-family="Segoe UI, Arial, sans-serif">reducing token waste, and rejecting vague or dangerous skills.</text>
+  <rect x="120" y="530" width="290" height="10" rx="5" fill="url(#accent)"/>
 </svg>
